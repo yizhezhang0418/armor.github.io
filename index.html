@@ -166,78 +166,20 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
-      </video>
+      </video> -->
+      <img src="./static/images/fig1" alt="teaser" width="100%">
+    
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        ARMOR is an adaptive meshing framework that enables high-fidelity real-time mesh reconstruction in complex underground environments.
       </h2>
     </div>
   </div>
 </section>
 
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+  
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -246,43 +188,44 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            Unexposed environments, such as lava tubes, mines, and tunnels, are among the most complex yet strategically significant domains for scientific exploration 
+            and infrastructure development. Accurate and real-time 3D meshing of these environments is essential for applications 
+            including automated structural assessment, robotic-assisted inspection, and safety monitoring. Implicit neural Signed Distance Fields (SDFs) 
+            have shown promising capabilities in online meshing; however, existing methods often suffer from large projection errors and rely on fixed reconstruction parameters, 
+            limiting their adaptability to complex and unstructured underground environments such as tunnels, caves, and lava tubes.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            To address these challenges, this paper proposes ARMOR, a scene-adaptive and reinforcement learning-based framework for 
+            real-time 3D meshing in unexposed environments. ARMOR consists of three primary components:
+            (1) a spatio-temporal geometry smoothing module that enhances point cloud density by leveraging temporal information and 
+            integrates a context-aware normal vector orientation strategy to improve SDF training in underground settings;
+            (2) a reinforcement learning-based parameter optimization module that dynamically adjusts reconstruction parameters in response to 
+            complex environmental characteristics; and
+            (3) ARMOR learns online parameter tuning strategies from prior point cloud datasets through simulation and practice, 
+            further improving its adaptability to unseen real environments.
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            The proposed method was validated across more than 3,000 meters of underground environments, including engineered tunnels, natural caves, and lava tubes. 
+            Experimental results demonstrate that ARMOR achieves superior performance in real-time mesh reconstruction, 
+            reducing geometric error by 3.96\% compared to state-of-the-art baselines, while maintaining real-time efficiency. 
+            The method exhibits improved robustness, accuracy, and adaptability, indicating its potential for advanced 3D monitoring and mapping 
+            in challenging unexposed scenarios. 
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
+  </div>
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+          <iframe src="1"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -292,6 +235,36 @@
 </section>
 
 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <div class="colum">
+          <h2 class="title is-3">Pipeline</h2>
+  
+          <img src="./static/images/pipeline.png" alt="Pipeline" width="100%">
+          <br>
+          <br>
+          <div class="content has-text-justified">
+            <p>
+              <strong>The architecture of ARMOR.</strong> The pipeline begins with preprocessing of sequential LiDAR and IMU inputs, 
+              followed by spatial-temporal fused geometry smoothing that leverages consistency constraints to produce high-quality normal estimations. 
+              Subsequently, the reinforcement learning agent analyzes characteristics of local neural maps from the previous state T\textsubscript{i-1} 
+              and computes a multi-discrete probability distribution to determine optimal mapping parameters. These parameters guide the update of local neural maps 
+              and adaptive meshing process. The resulting updated neural representation then serves as the observation for the subsequent timestamp T\textsubscript{i+1}, 
+              creating a continuous adaptive reconstruction loop.
+            </p>
+          </div>
+
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <section class="section">
   <div class="container is-max-desktop">
 
